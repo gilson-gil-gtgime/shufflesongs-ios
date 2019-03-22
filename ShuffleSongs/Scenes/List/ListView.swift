@@ -11,8 +11,14 @@ import UIKit
 import Cartography
 
 protocol ListViewLogic: class {
+  var viewInteractions: ListViewInteractions? { get set }
   var tableView: UITableView { get }
   var activityIndicator: UIActivityIndicatorView { get }
+  var rightBarButtonItems: [UIBarButtonItem] { get }
+}
+
+protocol ListViewInteractions: class {
+  func didTapShuffle(at view: ListView)
 }
 
 final class ListView: UIView, ListViewLogic {
@@ -32,6 +38,16 @@ final class ListView: UIView, ListViewLogic {
     tableView.allowsSelection = false
     return tableView
   }()
+
+  public private(set) lazy var rightBarButtonItems: [UIBarButtonItem] = {
+    let button = UIBarButtonItem(image: UIImage.List.shuffleButton,
+                                 style: .plain,
+                                 target: self,
+                                 action: #selector(shuffleTapped))
+    return [button]
+  }()
+
+  weak var viewInteractions: ListViewInteractions?
 
   init() {
     super.init(frame: .zero)
@@ -59,5 +75,13 @@ final class ListView: UIView, ListViewLogic {
       activityIndicator.center == view.center
       tableView.edges == view.edges
     }
+  }
+}
+
+// MARK: - Actions
+@objc
+extension ListView {
+  func shuffleTapped() {
+    viewInteractions?.didTapShuffle(at: self)
   }
 }

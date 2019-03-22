@@ -43,12 +43,15 @@ final class ListViewController: UIViewController {
     viewController.interactor = interactor
     interactor.presenter = presenter
     presenter.viewController = viewController
+
+    title = String.List.title
   }
 
   // MARK: - View lifecycle
 
   override func loadView() {
     let listView = ListView()
+    listView.viewInteractions = self
     self.listView = listView
     self.view = listView
   }
@@ -56,6 +59,7 @@ final class ListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
+    setupNavigationItem()
     fetchList()
   }
 
@@ -64,6 +68,14 @@ final class ListViewController: UIViewController {
   private func setupTableView() {
     listView?.tableView.register(ListTrackCell.self, forCellReuseIdentifier: ListTrackCell.reuseIdentifier)
     listView?.tableView.dataSource = self
+  }
+
+  // MARK: - Navigation Item
+
+  private func setupNavigationItem() {
+    if let rightBarButtonItems = listView?.rightBarButtonItems {
+      navigationItem.rightBarButtonItems = rightBarButtonItems
+    }
   }
   
   // MARK: - Fetch List
@@ -106,5 +118,12 @@ extension ListViewController: UITableViewDataSource {
       trackCell.update(track: displayedTrack)
     }
     return cell
+  }
+}
+
+// MARK: - ListViewInteractions
+extension ListViewController: ListViewInteractions {
+  func didTapShuffle(at view: ListView) {
+
   }
 }
