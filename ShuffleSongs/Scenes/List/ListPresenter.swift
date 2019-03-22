@@ -13,7 +13,7 @@
 import UIKit
 
 protocol ListPresentationLogic {
-  func presentList(response: List.SongsList.Response)
+  func presentList(response: List.TracksList.Response)
 }
 
 final class ListPresenter: ListPresentationLogic {
@@ -21,8 +21,14 @@ final class ListPresenter: ListPresentationLogic {
 
   // MARK: - Present List
 
-  func presentList(response: List.SongsList.Response) {
-    let viewModel = List.SongsList.ViewModel()
+  func presentList(response: List.TracksList.Response) {
+    let list = response.list.compactMap(makeDisplayed)
+    let viewModel = List.TracksList.ViewModel(list: list)
     viewController?.displayList(viewModel: viewModel)
+  }
+
+  private func makeDisplayed(track: Track) -> List.DisplayedTrack {
+    let info = "\(track.artistName) (\(track.genre))"
+    return List.DisplayedTrack(artworkUrl: track.artworkUrl, name: track.name, info: info)
   }
 }

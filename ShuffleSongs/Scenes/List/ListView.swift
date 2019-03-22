@@ -16,15 +16,18 @@ protocol ListViewLogic: class {
 }
 
 final class ListView: UIView, ListViewLogic {
-  public private(set) lazy var activityIndicator: UIActivityIndicatorView = {
+  public private(set) var activityIndicator: UIActivityIndicatorView = {
     let activity = UIActivityIndicatorView(style: .whiteLarge)
     activity.color = .defaultTint
     activity.hidesWhenStopped = true
     return activity
   }()
 
-  public private(set) lazy var tableView: UITableView = {
+  public private(set) var tableView: UITableView = {
     let tableView = UITableView()
+    tableView.backgroundColor = .clear
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 80
     return tableView
   }()
 

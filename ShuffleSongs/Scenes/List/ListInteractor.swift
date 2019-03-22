@@ -13,7 +13,7 @@
 import UIKit
 
 protocol ListBusinessLogic {
-  func fetchList(request: List.SongsList.Request)
+  func fetchList(request: List.TracksList.Request)
 }
 
 protocol ListDataStore {
@@ -28,11 +28,11 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
 
   // MARK: - Fetch List
 
-  func fetchList(request: List.SongsList.Request) {
+  func fetchList(request: List.TracksList.Request) {
     worker.fetchList(artists: artists) { [weak self] callback in
       do {
         let list = try callback()
-        let response = List.SongsList.Response(list: list)
+        let response = List.TracksList.Response(list: list)
         self?.presenter?.presentList(response: response)
       } catch {
         print(error)

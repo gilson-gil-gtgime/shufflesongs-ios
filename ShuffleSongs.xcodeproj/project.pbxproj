@@ -29,6 +29,8 @@
 		2B511F9A2244A2BA00A2CD20 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511F992244A2BA00A2CD20 /* API.swift */; };
 		2B511F9C2244A35E00A2CD20 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511F9B2244A35E00A2CD20 /* DataContainer.swift */; };
 		2B511F9E2244B04100A2CD20 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511F9D2244B04100A2CD20 /* DateFormatter.swift */; };
+		2B511FA02245194800A2CD20 /* ListTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511F9F2245194800A2CD20 /* ListTrackCell.swift */; };
+		2B511FA32245199E00A2CD20 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511FA22245199E00A2CD20 /* ReuseIdentifiable.swift */; };
 		C183712A3C4B69DA0C1AA9B7 /* Pods_ShuffleSongsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225509FFCBF0AA72D0570695 /* Pods_ShuffleSongsTests.framework */; };
 		CE6E9BB875EB358FF005B742 /* Pods_ShuffleSongs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDF9EF0FC7F2499D1B7120 /* Pods_ShuffleSongs.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		2B511F992244A2BA00A2CD20 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		2B511F9B2244A35E00A2CD20 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		2B511F9D2244B04100A2CD20 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		2B511F9F2245194800A2CD20 /* ListTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrackCell.swift; sourceTree = "<group>"; };
+		2B511FA22245199E00A2CD20 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		63DDF9EF0FC7F2499D1B7120 /* Pods_ShuffleSongs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShuffleSongs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9167CCAA8103D96B9B5BF2D8 /* Pods-ShuffleSongsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShuffleSongsTests.debug.xcconfig"; path = "Target Support Files/Pods-ShuffleSongsTests/Pods-ShuffleSongsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		989A09399DE1F0B2733372F9 /* Pods-ShuffleSongs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShuffleSongs.debug.xcconfig"; path = "Target Support Files/Pods-ShuffleSongs/Pods-ShuffleSongs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		2B511F722244913C00A2CD20 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2B511FA12245196B00A2CD20 /* Protocols */,
 				2B511F732244914300A2CD20 /* Models */,
 				2B511F7C2244988500A2CD20 /* Services */,
 				2B511F852244994B00A2CD20 /* String+Localized.swift */,
@@ -207,6 +212,7 @@
 				2B511F6922448D4700A2CD20 /* ListModels.swift */,
 				2B511F6A22448D4700A2CD20 /* ListViewController.swift */,
 				2B511F972244A08500A2CD20 /* ListView.swift */,
+				2B511F9F2245194800A2CD20 /* ListTrackCell.swift */,
 				2B511F6B22448D4700A2CD20 /* ListInteractor.swift */,
 			);
 			path = List;
@@ -218,6 +224,14 @@
 				2B511F8D22449B4300A2CD20 /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		2B511FA12245196B00A2CD20 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2B511FA22245199E00A2CD20 /* ReuseIdentifiable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		469182152B29453D09F1457F /* Pods */ = {
@@ -419,6 +433,7 @@
 				2B511F982244A08500A2CD20 /* ListView.swift in Sources */,
 				2B511F7022448D4700A2CD20 /* ListViewController.swift in Sources */,
 				2B511F9622449BE300A2CD20 /* Colors.swift in Sources */,
+				2B511FA32245199E00A2CD20 /* ReuseIdentifiable.swift in Sources */,
 				2B511F7B2244962B00A2CD20 /* Artist.swift in Sources */,
 				2B511F7122448D4700A2CD20 /* ListInteractor.swift in Sources */,
 				2B511F772244929D00A2CD20 /* Track.swift in Sources */,
@@ -428,6 +443,7 @@
 				2B511F6D22448D4700A2CD20 /* ListWorker.swift in Sources */,
 				2B511F7E224498A100A2CD20 /* HTTPService.swift in Sources */,
 				2B511F6C22448D4700A2CD20 /* ListPresenter.swift in Sources */,
+				2B511FA02245194800A2CD20 /* ListTrackCell.swift in Sources */,
 				2B511F80224498BD00A2CD20 /* HTTPError.swift in Sources */,
 				2B511F9A2244A2BA00A2CD20 /* API.swift in Sources */,
 				2B511F442244885900A2CD20 /* AppDelegate.swift in Sources */,

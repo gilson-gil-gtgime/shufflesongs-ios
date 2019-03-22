@@ -13,7 +13,13 @@
 import UIKit
 
 enum List {
-  enum SongsList {
+  struct DisplayedTrack {
+    let artworkUrl: String
+    let name: String
+    let info: String
+  }
+
+  enum TracksList {
     struct Request {
     }
 
@@ -22,6 +28,7 @@ enum List {
     }
     
     struct ViewModel {
+      let list: [DisplayedTrack]
     }
   }
 }

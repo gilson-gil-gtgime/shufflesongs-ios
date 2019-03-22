@@ -14,12 +14,13 @@ import UIKit
 
 protocol ListDisplayLogic: class {
   func displayLoading()
-  func displayList(viewModel: List.SongsList.ViewModel)
+  func displayList(viewModel: List.TracksList.ViewModel)
 }
 
 final class ListViewController: UIViewController {
   var interactor: ListBusinessLogic?
   var listView: ListViewLogic?
+  var displayedTracks: [List.DisplayedTrack]?
 
   // MARK: - Object lifecycle
 
@@ -44,7 +45,7 @@ final class ListViewController: UIViewController {
     presenter.viewController = viewController
   }
 
-  // MARK: View lifecycle
+  // MARK: - View lifecycle
 
   override func loadView() {
     let listView = ListView()
@@ -54,13 +55,21 @@ final class ListViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupTableView()
     fetchList()
+  }
+
+  // MARK: - Table View
+
+  private func setupTableView() {
+    listView?.tableView.register(ListTrackCell.self, forCellReuseIdentifier: ListTrackCell.reuseIdentifier)
+    listView?.tableView.dataSource = self
   }
   
   // MARK: - Fetch List
   
   func fetchList() {
-    let request = List.SongsList.Request()
+    let request = List.TracksList.Request()
     interactor?.fetchList(request: request)
     displayLoading()
   }
@@ -75,10 +84,27 @@ extension ListViewController: ListDisplayLogic {
     }
   }
 
-  func displayList(viewModel: List.SongsList.ViewModel) {
+  func displayList(viewModel: List.TracksList.ViewModel) {
     DispatchQueue.main.async {
+      self.displayedTracks = viewModel.list
       self.listView?.tableView.isHidden = false
+      self.listView?.tableView.reloadData()
       self.listView?.activityIndicator.stopAnimating()
     }
+  }
+}
+
+// MARK: - UITableView DataSource
+extension ListViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return displayedTracks?.count ?? 0
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: ListTrackCell.reuseIdentifier, for: indexPath)
+    if let trackCell = cell as? ListTrackCell, let displayedTrack = displayedTracks?[indexPath.row] {
+      trackCell.update(track: displayedTrack)
+    }
+    return cell
   }
 }
