@@ -26,6 +26,7 @@ final class ListView: UIView, ListViewLogic {
   public private(set) var tableView: UITableView = {
     let tableView = UITableView()
     tableView.backgroundColor = .clear
+    tableView.separatorColor = UIColor.darkGray
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 80
     tableView.allowsSelection = false

@@ -18,6 +18,8 @@ final class ListTrackCell: UITableViewCell {
   private let artworkImageView: URLImageView = {
     let imageView = URLImageView()
     imageView.contentMode = .scaleAspectFit
+    imageView.layer.masksToBounds = true
+    imageView.layer.cornerRadius = 6
     return imageView
   }()
 
@@ -60,7 +62,7 @@ final class ListTrackCell: UITableViewCell {
   }
 
   private func addConstraints() {
-    let margin: CGFloat = 12
+    let margin: CGFloat = 20
     let artworkSize: CGFloat = 60
     constrain(self, artworkImageView, trackLabel, infoLabel) { view, artworkImageView, trackLabel, infoLabel in
       artworkImageView.top == view.top + margin
