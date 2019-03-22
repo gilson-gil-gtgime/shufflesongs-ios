@@ -14,6 +14,7 @@ import UIKit
 
 protocol ListBusinessLogic {
   func fetchList(request: List.TracksList.Request)
+  func shuffle()
 }
 
 protocol ListDataStore {
@@ -32,11 +33,18 @@ final class ListInteractor: ListBusinessLogic, ListDataStore {
     worker.fetchList(artists: artists) { [weak self] callback in
       do {
         let list = try callback()
+        self?.list = list
         let response = List.TracksList.Response(list: list)
         self?.presenter?.presentList(response: response)
       } catch {
         print(error)
       }
     }
+  }
+
+  func shuffle() {
+    list = worker.shuffle(list: list)
+    let response = List.TracksList.Response(list: list)
+    presenter?.presentList(response: response)
   }
 }

@@ -124,6 +124,6 @@ extension ListViewController: UITableViewDataSource {
 // MARK: - ListViewInteractions
 extension ListViewController: ListViewInteractions {
   func didTapShuffle(at view: ListView) {
-
+    interactor?.shuffle()
   }
 }
