@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  ShuffleSongs
+
+  Created by Gilson Gil on 22/03/19.
+  Copyright © 2019 Gilson Gil. All rights reserved.
+*/
+
+"SERVICES_ERROR_UNKNOWN" = "Ops! Um erro inexperado ocorreu! Favor tentar novamente!";
