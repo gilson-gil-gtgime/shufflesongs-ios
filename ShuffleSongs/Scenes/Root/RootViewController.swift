@@ -37,6 +37,7 @@ final class RootViewController: UINavigationController {
     viewControllers = [ListViewController()]
     view.backgroundColor = .main
     navigationBar.barTintColor = .navigationBar
+    navigationBar.isTranslucent = false
     navigationBar.tintColor = .defaultTint
     navigationBar.titleTextAttributes = [.foregroundColor: UIColor.defaultTint]
   }
