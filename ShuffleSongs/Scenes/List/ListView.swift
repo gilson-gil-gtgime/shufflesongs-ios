@@ -28,6 +28,7 @@ final class ListView: UIView, ListViewLogic {
     tableView.backgroundColor = .clear
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 80
+    tableView.allowsSelection = false
     return tableView
   }()
 

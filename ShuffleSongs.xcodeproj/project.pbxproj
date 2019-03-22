@@ -31,6 +31,8 @@
 		2B511F9E2244B04100A2CD20 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511F9D2244B04100A2CD20 /* DateFormatter.swift */; };
 		2B511FA02245194800A2CD20 /* ListTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511F9F2245194800A2CD20 /* ListTrackCell.swift */; };
 		2B511FA32245199E00A2CD20 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511FA22245199E00A2CD20 /* ReuseIdentifiable.swift */; };
+		2B511FA7224527ED00A2CD20 /* ImageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511FA6224527ED00A2CD20 /* ImageWorker.swift */; };
+		2B511FAA2245289E00A2CD20 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B511FA92245289E00A2CD20 /* URLImageView.swift */; };
 		C183712A3C4B69DA0C1AA9B7 /* Pods_ShuffleSongsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225509FFCBF0AA72D0570695 /* Pods_ShuffleSongsTests.framework */; };
 		CE6E9BB875EB358FF005B742 /* Pods_ShuffleSongs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DDF9EF0FC7F2499D1B7120 /* Pods_ShuffleSongs.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		2B511F9D2244B04100A2CD20 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		2B511F9F2245194800A2CD20 /* ListTrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTrackCell.swift; sourceTree = "<group>"; };
 		2B511FA22245199E00A2CD20 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		2B511FA6224527ED00A2CD20 /* ImageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWorker.swift; sourceTree = "<group>"; };
+		2B511FA92245289E00A2CD20 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		63DDF9EF0FC7F2499D1B7120 /* Pods_ShuffleSongs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShuffleSongs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9167CCAA8103D96B9B5BF2D8 /* Pods-ShuffleSongsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShuffleSongsTests.debug.xcconfig"; path = "Target Support Files/Pods-ShuffleSongsTests/Pods-ShuffleSongsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		989A09399DE1F0B2733372F9 /* Pods-ShuffleSongs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShuffleSongs.debug.xcconfig"; path = "Target Support Files/Pods-ShuffleSongs/Pods-ShuffleSongs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 		2B511F722244913C00A2CD20 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2B511FA82245289600A2CD20 /* Views */,
+				2B511FA5224527E200A2CD20 /* Workers */,
 				2B511FA12245196B00A2CD20 /* Protocols */,
 				2B511F732244914300A2CD20 /* Models */,
 				2B511F7C2244988500A2CD20 /* Services */,
@@ -232,6 +238,22 @@
 				2B511FA22245199E00A2CD20 /* ReuseIdentifiable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2B511FA5224527E200A2CD20 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2B511FA6224527ED00A2CD20 /* ImageWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2B511FA82245289600A2CD20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B511FA92245289E00A2CD20 /* URLImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		469182152B29453D09F1457F /* Pods */ = {
@@ -431,6 +453,7 @@
 				2B511F6F22448D4700A2CD20 /* ListModels.swift in Sources */,
 				2B511F9322449B4300A2CD20 /* RootViewController.swift in Sources */,
 				2B511F982244A08500A2CD20 /* ListView.swift in Sources */,
+				2B511FAA2245289E00A2CD20 /* URLImageView.swift in Sources */,
 				2B511F7022448D4700A2CD20 /* ListViewController.swift in Sources */,
 				2B511F9622449BE300A2CD20 /* Colors.swift in Sources */,
 				2B511FA32245199E00A2CD20 /* ReuseIdentifiable.swift in Sources */,
@@ -438,6 +461,7 @@
 				2B511F7122448D4700A2CD20 /* ListInteractor.swift in Sources */,
 				2B511F772244929D00A2CD20 /* Track.swift in Sources */,
 				2B511F9C2244A35E00A2CD20 /* DataContainer.swift in Sources */,
+				2B511FA7224527ED00A2CD20 /* ImageWorker.swift in Sources */,
 				2B511F82224498CE00A2CD20 /* String+Services.swift in Sources */,
 				2B511F862244994B00A2CD20 /* String+Localized.swift in Sources */,
 				2B511F6D22448D4700A2CD20 /* ListWorker.swift in Sources */,

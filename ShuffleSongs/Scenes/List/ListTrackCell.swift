@@ -15,8 +15,8 @@ protocol ListTrackCellLogic: class {
 }
 
 final class ListTrackCell: UITableViewCell {
-  private let artworkImageView: UIImageView = {
-    let imageView = UIImageView()
+  private let artworkImageView: URLImageView = {
+    let imageView = URLImageView()
     imageView.contentMode = .scaleAspectFit
     return imageView
   }()
@@ -85,6 +85,7 @@ extension ListTrackCell: ListTrackCellLogic {
   func update(track: List.DisplayedTrack) {
     trackLabel.text = track.name
     infoLabel.text = track.info
+    artworkImageView.imageUrl = track.artworkUrl
   }
 }
 
