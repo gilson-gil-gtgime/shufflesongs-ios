@@ -32,4 +32,20 @@ struct Track: Decodable {
     case name = "trackName"
     case genre = "primaryGenreName"
   }
+
+  init(identifier: Int, artistId: Int, name: String) {
+    self.identifier = identifier
+    self.name = name
+    self.artistId = artistId
+    releaseDate = Date()
+    timeMillis = 0
+    collectionName = ""
+    explicitness = ""
+    censoredName = ""
+    collectionId = 0
+    country = ""
+    genre = ""
+    artworkUrl = ""
+    artistName = ""
+  }
 }

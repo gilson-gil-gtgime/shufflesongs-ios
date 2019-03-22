@@ -20,12 +20,14 @@ final class ListTrackCell: UITableViewCell {
     imageView.contentMode = .scaleAspectFit
     imageView.layer.masksToBounds = true
     imageView.layer.cornerRadius = 6
+    imageView.tag = 1
     return imageView
   }()
 
   private let trackLabel: UILabel = {
     let label = UILabel()
     label.textColor = .title
+    label.tag = 2
     return label
   }()
 
@@ -33,6 +35,7 @@ final class ListTrackCell: UITableViewCell {
     let label = UILabel()
     label.textColor = .subtitle
     label.numberOfLines = 2
+    label.tag = 3
     return label
   }()
 
