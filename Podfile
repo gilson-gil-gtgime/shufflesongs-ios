@@ -7,6 +7,9 @@ target 'ShuffleSongs' do
 
   target 'ShuffleSongsTests' do
     inherit! :search_paths
+
+    pod 'Quick'
+    pod 'Nimble'
   end
 
 end

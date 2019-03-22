@@ -312,6 +312,7 @@
 				2B511F502244885B00A2CD20 /* Sources */,
 				2B511F512244885B00A2CD20 /* Frameworks */,
 				2B511F522244885B00A2CD20 /* Resources */,
+				995B7B56021ADD18E7CA3BFE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,6 +447,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShuffleSongs/Pods-ShuffleSongs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		995B7B56021ADD18E7CA3BFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShuffleSongsTests/Pods-ShuffleSongsTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShuffleSongsTests/Pods-ShuffleSongsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -672,7 +697,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9167CCAA8103D96B9B5BF2D8 /* Pods-ShuffleSongsTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W53VLM5X6W;
@@ -694,7 +718,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8883FA1849328A7141E6754 /* Pods-ShuffleSongsTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W53VLM5X6W;
